@@ -9,7 +9,7 @@ public class Personalizado extends Servicio {
 	
 	public Double costo() {
 			
-		if(Servicio.getTrabajo().isUrgente()==true) {
+		if(this.getUrgente()==true) {
 			return (Servicio.getTrabajo().precio()+costo_mat+costo_flete+metros_2)*1.5;
 		}else {
 			return Servicio.getTrabajo().precio()+costo_mat+costo_flete+metros_2;
@@ -40,7 +40,8 @@ public class Personalizado extends Servicio {
 		this.metros_2 = metros_2;
 	}
 
-	public Personalizado(double costo_mat, double costo_flete, double metros_2) {
+	public Personalizado(Oficio oficio, Boolean urgente,double costo_mat, double costo_flete, double metros_2) {
+		super(oficio, urgente);
 		this.costo_flete = costo_flete;
 		this.costo_mat = costo_mat;
 		this.metros_2 = metros_2;

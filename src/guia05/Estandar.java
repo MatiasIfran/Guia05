@@ -4,9 +4,13 @@ public class Estandar extends Servicio{
 	
 	double costoFijo;
 	
+	public Estandar(Oficio oficio, boolean urgente, Double monto_total) {
+		super(oficio, urgente);
+		this.costoFijo = monto_total;
+	}
+	
 	public Double costo() {
-		
-		if(Servicio.getTrabajo().isUrgente()==true) {
+		if(this.getUrgente()==true) {
 			return (Servicio.getTrabajo().precio()+this.costoFijo)*1.5;
 		}else {
 			return Servicio.getTrabajo().precio()+this.costoFijo;
@@ -22,7 +26,4 @@ public class Estandar extends Servicio{
 		this.costoFijo = costoFijo;
 	}
 
-	public Estandar (double costoFijo) {
-		this.costoFijo = costoFijo;
-	}
 }

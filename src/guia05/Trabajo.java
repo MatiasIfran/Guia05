@@ -6,9 +6,14 @@ public class Trabajo implements Contratable {
 
 	private Trabajador trabajador;
 	private Servicio servicio;
-	private boolean urgente;
 	private Instant fechaFin;
 	private double costoTrabajo;
+	
+	public Trabajo(Servicio servicio, Instant fechaFin, Trabajador trabajador) {
+		this.servicio = servicio;
+		this.fechaFin = fechaFin;
+		this.trabajador = trabajador;
+	}
 	
 	public Trabajador getTrabajador() {
 		return trabajador;
@@ -22,12 +27,7 @@ public class Trabajo implements Contratable {
 	public void setServicio(Servicio servicio) {
 		this.servicio = servicio;
 	}
-	public boolean isUrgente() {
-		return urgente;
-	}
-	public void setUrgente(boolean urgente) {
-		this.urgente = urgente;
-	}
+	
 	public Instant getFechaFin() {
 		return fechaFin;
 	}

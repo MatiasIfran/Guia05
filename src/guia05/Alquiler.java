@@ -2,7 +2,6 @@ package guia05;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.time.LocalDate;
 
 public class Alquiler implements Contratable {
 	

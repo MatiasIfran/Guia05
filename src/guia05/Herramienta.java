@@ -24,9 +24,7 @@ public class Herramienta {
 
 	public void setCosto_herramienta(double costo_herramienta) {
 		this.costo_herramienta = costo_herramienta;
-	}
-	
-	
+	}	
 }
 
 

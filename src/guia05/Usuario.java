@@ -1,6 +1,6 @@
 package guia05;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import guia05.Exception.AlquilerNoEsEntregadoException;
 
@@ -10,7 +10,15 @@ public class Usuario {
 	private String apellido;
 	private String DNI;
 	private String email;
-	private List<Contratable> itemsContratados;
+	private ArrayList<Contratable> itemsContratados;
+	
+	public Usuario(String nombre, String apellido, String DNI, String email) {
+		itemsContratados = new ArrayList<Contratable>();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.DNI = DNI;
+		this.email = email;
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -44,11 +52,11 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public List<Contratable> getItemsContratados() {
+	public ArrayList<Contratable> getItemsContratados() {
 		return itemsContratados;
 	}
 
-	public void setItemsContratados(List<Contratable> itemsContratados) {
+	public void setItemsContratados(ArrayList<Contratable> itemsContratados) {
 		this.itemsContratados = itemsContratados;
 	}
 
@@ -66,8 +74,9 @@ public class Usuario {
 					max_herramienta++;
 				}
 			}
-			if(max_herramienta>2) {
+			if(max_herramienta>=2) {
 				throw new AlquilerNoEsEntregadoException();
+
 			}else this.itemsContratados.add(contratable);
 		}
 	}
